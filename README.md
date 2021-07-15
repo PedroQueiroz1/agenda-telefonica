@@ -13,3 +13,6 @@ Para executar o projeto, será necessário instalar os seguintes programas:</br>
 </br>
 
 <h3>ATENÇÃO: Projeto ainda em construção!!!</h3>
+</br>
+</br>
+<b>Obs: Meu primeiro projeto simples sendo realizado por fora dos cursos que estou realizando ou que já realizei! </b>
