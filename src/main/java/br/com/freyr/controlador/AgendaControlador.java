@@ -2,10 +2,12 @@ package br.com.freyr.controlador;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -14,6 +16,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import br.com.freyr.dto.agenda.AgendaRequestDTO;
+import br.com.freyr.dto.agenda.AgendaResponseDTO;
 import br.com.freyr.entidade.Agenda;
 import br.com.freyr.servico.AgendaServico;
 import io.swagger.annotations.Api;
@@ -40,23 +44,29 @@ public class AgendaControlador {
 	@Autowired
 	private AgendaServico agendaServico;
 	
-	@ApiOperation(value="Listar")
+	@ApiOperation(value="Listar",nickname="listarTodasAgendas")
 	@GetMapping
-	public List<Agenda> listarTodos(){
-		return agendaServico.listarTodos();
+	public List<AgendaResponseDTO> listarTodas(){
+		return agendaServico.listarTodos().stream()
+				.map(agenda->AgendaResponseDTO.converterParaAgendaDTO(agenda))
+				.collect(Collectors.toList());
 	}
 	
-	@ApiOperation(value="Listar por codigo")
+	@ApiOperation(value="Listar por codigo", nickname="buscarAgendaPorCodigo")
 	@GetMapping("/{codigo}")
-	public ResponseEntity<Agenda> buscarPorCodigo(@PathVariable Long codigo){
+	public ResponseEntity<AgendaResponseDTO> buscarPorCodigo(@PathVariable Long codigo){
 		Optional<Agenda> agenda =  agendaServico.buscarPorCodigo(codigo);		
-		return agenda.isPresent()?ResponseEntity.ok(agenda.get()):ResponseEntity.notFound().build();
+		return agenda.isPresent()?ResponseEntity
+				.ok(AgendaResponseDTO.converterParaAgendaDTO(agenda.get()))
+				:ResponseEntity.notFound().build();
 	}
 	
 	@ApiOperation(value="Salvar")
 	@PostMapping
-	public ResponseEntity<Agenda> salvar(@Valid @RequestBody Agenda agenda){
-		return ResponseEntity.ok(agendaServico.salvar(agenda));
+	public ResponseEntity<AgendaResponseDTO> salvar(@Valid @RequestBody AgendaRequestDTO agenda){
+		Agenda agendaSalva = agendaServico.salvar(agenda.converterParaEntidade());
+		return ResponseEntity.status(HttpStatus.CREATED)
+				.body(AgendaResponseDTO.converterParaAgendaDTO(agendaSalva));
 	}
 	
 	
