@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -47,6 +49,12 @@ public class AgendaControlador {
 	public ResponseEntity<Agenda> buscarPorCodigo(@PathVariable Long codigo){
 		Optional<Agenda> agenda =  agendaServico.buscarPorCodigo(codigo);		
 		return agenda.isPresent()?ResponseEntity.ok(agenda.get()):ResponseEntity.notFound().build();
+	}
+	
+	@ApiOperation(value="Salvar")
+	@PostMapping
+	public ResponseEntity<Agenda> salvar(@RequestBody Agenda agenda){
+		return ResponseEntity.ok(agendaServico.salvar(agenda));
 	}
 	
 	

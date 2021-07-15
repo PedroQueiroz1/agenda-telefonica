@@ -31,6 +31,12 @@ public class Agenda {
 	public Agenda() {
 	}
 
+	public Agenda(String nome, String telefone, Endereco endereco) {
+		this.nome = nome;
+		this.telefone = telefone;
+		this.endereco = endereco;
+	}
+
 	public Long getId() {
 		return id;
 	}
