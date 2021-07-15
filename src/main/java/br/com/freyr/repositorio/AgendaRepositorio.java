@@ -6,4 +6,5 @@ import br.com.freyr.entidade.Agenda;
 
 public interface AgendaRepositorio extends JpaRepository<Agenda, Long>{
 
+	Agenda findByNome(String nome);
 }

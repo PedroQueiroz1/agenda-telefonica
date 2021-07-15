@@ -48,7 +48,4 @@ public class AgendaRequestDTO {
 	public void setEnderecoDTO(EnderecoRequestDTO enderecoDTO) {
 		this.enderecoDTO = enderecoDTO;
 	}
-	
-	
-	
 }

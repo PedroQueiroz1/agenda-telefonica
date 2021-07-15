@@ -23,11 +23,11 @@ public class Agenda {
 	
 	@Column(name="nome", nullable = false, length=50)
 	@NotBlank(message="Nome")
-	@Length(min = 3, max = 50)
+	@Length(min = 3, max = 50, message = "Nome")
 	private String nome;
 	
 	@Column(name="telefone",nullable = false, length=20)
-	@NotBlank(message="Nome")
+	@NotBlank(message="Telefone")
 	private String telefone;
 	
 	@Embedded
@@ -98,11 +98,4 @@ public class Agenda {
 		return Objects.equals(endereco, other.endereco) && Objects.equals(id, other.id)
 				&& Objects.equals(nome, other.nome) && Objects.equals(telefone, other.telefone);
 	}
-
-
-
-
-	
-	
-
 }

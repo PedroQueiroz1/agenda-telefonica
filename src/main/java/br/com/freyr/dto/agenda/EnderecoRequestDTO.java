@@ -82,7 +82,4 @@ public class EnderecoRequestDTO {
 	public void setEstado(String estado) {
 		this.estado = estado;
 	}
-	
-	
-	
 }
