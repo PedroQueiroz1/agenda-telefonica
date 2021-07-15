@@ -16,7 +16,7 @@ Para executar o projeto, será necessário instalar os seguintes programas:</br>
 </br>
 Esse projeto faz uso das seguintes tecnologias:</br>
 <ul>
-  <li>SwaggerUi+Swagger2
+  <li>SwaggerUi + Swagger2
   <li>Grafana
   <li>Prometheus
   <li>docker-compose
