@@ -6,8 +6,10 @@ Esse projeto ilustra uma agenda telefônica gerada através da utilização do S
 
 Para executar o projeto, será necessário instalar os seguintes programas:</br>
 </br>
-*JDK 11: Necessário para executar o projeto Java</br>
-*Spring Tool Suíte 4: Para desenvolvimento do projeto</br>
+<ul>
+<li>JDK 11: Necessário para executar o projeto Java</li></br>
+<li>Spring Tool Suíte 4: Para desenvolvimento do projeto</li></br>
+</ul
 </br>
 
 <h3>ATENÇÃO: Projeto ainda em construção!!!</h3>
