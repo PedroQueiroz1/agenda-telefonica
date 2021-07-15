@@ -24,21 +24,12 @@ public class Agenda {
 	@Column(name="telefone",nullable = false, length=20)
 	private String telefone;
 	
-	@Column(name="celular", nullable = false)
-	private String celular;
-	
-	@Column(name="email", nullable = false)
-	private String email;
-	
 	@Embedded
 	private Endereco endereco;
 
 
 	public Agenda() {
 	}
-
-	
-	
 
 	public Long getId() {
 		return id;
@@ -69,27 +60,6 @@ public class Agenda {
 		this.telefone = telefone;
 	}
 
-
-	public String getCelular() {
-		return celular;
-	}
-
-
-	public void setCelular(String celular) {
-		this.celular = celular;
-	}
-
-
-	public String getEmail() {
-		return email;
-	}
-
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-
 	public Endereco getEndereco() {
 		return endereco;
 	}
@@ -99,12 +69,9 @@ public class Agenda {
 		this.endereco = endereco;
 	}
 
-
-
-
 	@Override
 	public int hashCode() {
-		return Objects.hash(celular, email, endereco, id, nome, telefone);
+		return Objects.hash(endereco, id, nome, telefone);
 	}
 
 	@Override
@@ -116,10 +83,11 @@ public class Agenda {
 		if (getClass() != obj.getClass())
 			return false;
 		Agenda other = (Agenda) obj;
-		return Objects.equals(celular, other.celular) && Objects.equals(email, other.email)
-				&& Objects.equals(endereco, other.endereco) && Objects.equals(id, other.id)
+		return Objects.equals(endereco, other.endereco) && Objects.equals(id, other.id)
 				&& Objects.equals(nome, other.nome) && Objects.equals(telefone, other.telefone);
 	}
+
+
 
 
 	

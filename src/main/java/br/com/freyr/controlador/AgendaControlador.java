@@ -15,7 +15,7 @@ import br.com.freyr.servico.AgendaServico;
 
 @RestController
 @RequestMapping("/agenda")
-public class AgendaController {
+public class AgendaControlador {
 	
 	@Autowired
 	private AgendaServico agendaServico;
