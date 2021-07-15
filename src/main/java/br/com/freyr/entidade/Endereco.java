@@ -29,6 +29,23 @@ public class Endereco {
 	@Column(name = "estado")
 	private String estado;
 
+	
+	
+	public Endereco() {
+		super();
+	}
+
+	public Endereco(String logradouro, Integer numero, String complemento, String bairro, String cep, String cidade,
+			String estado) {
+		this.logradouro = logradouro;
+		this.numero = numero;
+		this.complemento = complemento;
+		this.bairro = bairro;
+		this.cep = cep;
+		this.cidade = cidade;
+		this.estado = estado;
+	}
+
 	public String getLogradouro() {
 		return logradouro;
 	}

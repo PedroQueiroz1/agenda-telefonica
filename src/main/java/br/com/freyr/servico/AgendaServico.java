@@ -23,4 +23,12 @@ public class AgendaServico {
 		return agendaRepositorio.findById(codigo);
 	}
 	
+	public Agenda salvar(Agenda agenda) {
+		verificarSeJaExiste();
+		return agendaRepositorio.save(agenda);
+	}
+
+	private void verificarSeJaExiste() {
+	}
+	
 }
