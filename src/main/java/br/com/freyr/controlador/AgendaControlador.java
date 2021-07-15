@@ -3,6 +3,8 @@ package br.com.freyr.controlador;
 import java.util.List;
 import java.util.Optional;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -53,7 +55,7 @@ public class AgendaControlador {
 	
 	@ApiOperation(value="Salvar")
 	@PostMapping
-	public ResponseEntity<Agenda> salvar(@RequestBody Agenda agenda){
+	public ResponseEntity<Agenda> salvar(@Valid @RequestBody Agenda agenda){
 		return ResponseEntity.ok(agendaServico.salvar(agenda));
 	}
 	

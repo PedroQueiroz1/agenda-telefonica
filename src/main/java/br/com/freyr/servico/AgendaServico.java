@@ -11,7 +11,7 @@ import br.com.freyr.repositorio.AgendaRepositorio;
 
 @Service
 public class AgendaServico {
-
+	
 	@Autowired
 	private AgendaRepositorio agendaRepositorio;
 	
