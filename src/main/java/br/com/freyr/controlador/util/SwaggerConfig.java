@@ -40,7 +40,14 @@ public class SwaggerConfig {
 	private ApiInfo informacaoApi() {
 		 return new ApiInfoBuilder()
 				 .title("Agenda Telefônica")
-				 .description("Sistema de agenda telefônica")
+				 .description("Sistema de agenda telefônica "
+				 		+ "(para exercitar o que eu aprendi no último curso)</br></br>"
+				 		+ "Utiliza as seguintes tecnologias:</br>"
+				 		+ "-Swagger-ui + Swagger2</br>"
+				 		+ "-Grafana</br>"
+				 		+ "-Prometheus</br>"
+				 		+ "-Jaeger</br>"
+				 		+ "-Actuator</br>")
 				 .version("1.0.0")
 				 .build();
 	}

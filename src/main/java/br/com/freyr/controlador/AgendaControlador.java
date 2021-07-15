@@ -9,11 +9,14 @@ import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.freyr.dto.agenda.AgendaRequestDTO;
@@ -53,8 +56,8 @@ public class AgendaControlador {
 	}
 	
 	@ApiOperation(value="Listar por codigo", nickname="buscarAgendaPorCodigo")
-	@GetMapping("/{codigo}")
-	public ResponseEntity<AgendaResponseDTO> buscarPorCodigo(@PathVariable Long codigo){
+	@GetMapping("/listarPorCodigo/{codigo}")
+	public ResponseEntity<AgendaResponseDTO> listarPorCodigo(@PathVariable Long codigo){
 		Optional<Agenda> agenda =  agendaServico.buscarPorCodigo(codigo);		
 		return agenda.isPresent()?ResponseEntity
 				.ok(AgendaResponseDTO.converterParaAgendaDTO(agenda.get()))
@@ -69,5 +72,18 @@ public class AgendaControlador {
 				.body(AgendaResponseDTO.converterParaAgendaDTO(agendaSalva));
 	}
 	
+	@ApiOperation(value="Atualizar")
+	@PutMapping("/atualizar/{codigo}")
+	public ResponseEntity<AgendaResponseDTO> atualizar(@Valid @PathVariable Long codigo,
+			@Valid @RequestBody AgendaRequestDTO agenda){
+		var atualizarAgenda = agendaServico.atualizar(codigo, agenda.converterParaEntidade());
+		return ResponseEntity.ok(AgendaResponseDTO.converterParaAgendaDTO(atualizarAgenda));
+	}
 	
+	@ApiOperation(value="Deletar")
+	@ResponseStatus(code = HttpStatus.NO_CONTENT)
+	@DeleteMapping("/deletar/{codigo)")
+	public void deletar(@PathVariable Long codigo) {
+		agendaServico.deletar(codigo);
+	}
 }
