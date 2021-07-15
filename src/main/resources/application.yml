@@ -22,3 +22,11 @@ spring:
     password: root
     baselineOnMigrate: true
     validateOnMigrate: false
+opentracing:
+  jaeger:
+    service-name: agenda-telefonica
+    udp-sender:
+      host: localhost
+      port: 6831
+    sampler-type: const
+    sampler-param: 1

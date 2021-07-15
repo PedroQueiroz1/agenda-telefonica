@@ -8,6 +8,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotBlank;
+
+import org.hibernate.validator.constraints.Length;
 
 @Entity
 @Table(name = "agenda")
@@ -19,9 +22,12 @@ public class Agenda {
 	private Long id;
 	
 	@Column(name="nome", nullable = false, length=50)
+	@NotBlank(message="Nome")
+	@Length(min = 3, max = 50)
 	private String nome;
 	
 	@Column(name="telefone",nullable = false, length=20)
+	@NotBlank(message="Nome")
 	private String telefone;
 	
 	@Embedded
