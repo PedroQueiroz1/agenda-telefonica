@@ -12,6 +12,20 @@ Para executar o projeto, será necessário instalar os seguintes programas:</br>
 </ul>
 </br>
 
+<h2>Tecnologias</h2>
+</br>
+Esse projeto faz uso das seguintes tecnologias:</br>
+<ul>
+  <li>SwaggerUi+Swagger2
+  <li>Grafana
+  <li>Prometheus
+  <li>docker-compose
+  <li>Jaeger
+  <li>Actuator
+  <li>Mysql
+  <li>Flyway
+<ul>
+
 <h3>ATENÇÃO: Projeto ainda em construção!!!</h3>
 </br>
 </br>
