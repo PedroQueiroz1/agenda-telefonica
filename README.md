@@ -10,5 +10,4 @@ Para executar o projeto, será necessário instalar os seguintes programas:</br>
 *Spring Tool Suíte 4: Para desenvolvimento do projeto</br>
 </br>
 
-<h3>Observação</h3>
-<b>Projeto ainda em construção!!!</b>
+<h3>ATENÇÃO: Projeto ainda em construção!!!</h3>
