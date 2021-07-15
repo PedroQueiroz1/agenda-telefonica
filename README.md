@@ -13,6 +13,7 @@ Para executar o projeto, será necessário instalar os seguintes programas:</br>
 
 <h2>Tecnologias</h2>
 Esse projeto faz uso das seguintes tecnologias:</br>
+</br>
 <ul>
   <li>SwaggerUi + Swagger2
   <li>Grafana
