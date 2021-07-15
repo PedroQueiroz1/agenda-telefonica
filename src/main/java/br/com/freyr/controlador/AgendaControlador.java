@@ -12,7 +12,23 @@ import org.springframework.web.bind.annotation.RestController;
 
 import br.com.freyr.entidade.Agenda;
 import br.com.freyr.servico.AgendaServico;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 
+/*
+ * Por ser um controller é necessário utilizar a anotação @RestController,
+ * para sinalizar que é uma classe do Spring MVC. Realizando, automaticamente,
+ * tudo o que a anotação @Controller é capaz de fazer.
+ * 
+ * @RequestMapping necessário para mapear a URL
+ * URL: http://localhost:8080/agenda
+ * 
+ * Anotações do swagger utilizadas nessa classe:
+ * - @Api
+ * - @ApiOperation
+ */
+
+@Api(tags = "Agenda")
 @RestController
 @RequestMapping("/agenda")
 public class AgendaControlador {
@@ -20,16 +36,16 @@ public class AgendaControlador {
 	@Autowired
 	private AgendaServico agendaServico;
 	
+	@ApiOperation(value="Listar")
 	@GetMapping
 	public List<Agenda> listarTodos(){
 		return agendaServico.listarTodos();
 	}
 	
+	@ApiOperation(value="Listar por codigo")
 	@GetMapping("/{codigo}")
 	public ResponseEntity<Agenda> buscarPorCodigo(@PathVariable Long codigo){
-		
-		Optional<Agenda> agenda =  agendaServico.buscarPorCodigo(codigo);
-		
+		Optional<Agenda> agenda =  agendaServico.buscarPorCodigo(codigo);		
 		return agenda.isPresent()?ResponseEntity.ok(agenda.get()):ResponseEntity.notFound().build();
 	}
 	
