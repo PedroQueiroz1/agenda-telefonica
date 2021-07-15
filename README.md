@@ -9,7 +9,7 @@ Para executar o projeto, será necessário instalar os seguintes programas:</br>
 <ul>
 <li>JDK 11: Necessário para executar o projeto Java</li></br>
 <li>Spring Tool Suíte 4: Para desenvolvimento do projeto</li></br>
-</ul
+</ul>
 </br>
 
 <h3>ATENÇÃO: Projeto ainda em construção!!!</h3>
