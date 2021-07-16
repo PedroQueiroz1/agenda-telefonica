@@ -3,7 +3,7 @@ package br.com.freyr.dto.agenda;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
-@ApiModel("Endereco retorno DTO")
+@ApiModel("Endereco resposta DTO")
 public class EnderecoResponseDTO {
 
 	@ApiModelProperty(value="Logradouro")

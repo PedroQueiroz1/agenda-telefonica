@@ -12,7 +12,7 @@ import br.com.freyr.entidade.Endereco;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
-@ApiModel("Cliente requesição DTO")
+@ApiModel("Agenda requisição DTO")
 public class AgendaRequestDTO {
 
 	@ApiModelProperty(value="Nome")

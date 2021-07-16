@@ -4,7 +4,7 @@ import br.com.freyr.entidade.Agenda;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
-@ApiModel("Agenda retorno DTO")
+@ApiModel("Agenda resposta DTO")
 public class AgendaResponseDTO {
 
 	@ApiModelProperty(value="código")
