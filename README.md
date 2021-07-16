@@ -26,4 +26,4 @@ Esse projeto faz uso das seguintes tecnologias:</br>
 <h3>ATENÇÃO: Projeto ainda em construção!!!</h3>
 </br>
 </br>
-<b>Obs: Meu primeiro projeto simples sendo realizado por fora dos cursos que estou realizando ou que já realizei! </b>
+<b>Obs: Meu primeiro projeto simples sendo realizado fora dos cursos que estou realizando e que já realizei! </b>
