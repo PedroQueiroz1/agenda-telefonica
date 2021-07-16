@@ -9,6 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.Length;
 
@@ -19,7 +20,7 @@ public class Agenda {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="codigo")
-	private Long id;
+	private Long codigo;
 	
 	@Column(name="nome", nullable = false, length=50)
 	@NotBlank(message="Nome")
@@ -28,6 +29,7 @@ public class Agenda {
 	
 	@Column(name="telefone",nullable = false, length=20)
 	@NotBlank(message="Telefone")
+	@Pattern(regexp = "\\([\\d]{2}\\)[\\d]{5}[- .][\\d]{4}", message = "Telefone")
 	private String telefone;
 	
 	@Embedded
@@ -43,13 +45,13 @@ public class Agenda {
 		this.endereco = endereco;
 	}
 
-	public Long getId() {
-		return id;
+	public Long getCodigo() {
+		return codigo;
 	}
 
 
-	public void setId(Long id) {
-		this.id = id;
+	public void setCodigo(Long codigo) {
+		this.codigo = codigo;
 	}
 
 
@@ -83,7 +85,7 @@ public class Agenda {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(endereco, id, nome, telefone);
+		return Objects.hash(endereco, codigo, nome, telefone);
 	}
 
 	@Override
@@ -95,7 +97,7 @@ public class Agenda {
 		if (getClass() != obj.getClass())
 			return false;
 		Agenda other = (Agenda) obj;
-		return Objects.equals(endereco, other.endereco) && Objects.equals(id, other.id)
+		return Objects.equals(endereco, other.endereco) && Objects.equals(codigo, other.codigo)
 				&& Objects.equals(nome, other.nome) && Objects.equals(telefone, other.telefone);
 	}
 }

@@ -1,5 +1,12 @@
 package br.com.freyr.dto.agenda;
 
+import javax.validation.Valid;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+
+import org.hibernate.validator.constraints.Length;
+
 import br.com.freyr.entidade.Agenda;
 import br.com.freyr.entidade.Endereco;
 import io.swagger.annotations.ApiModel;
@@ -9,12 +16,18 @@ import io.swagger.annotations.ApiModelProperty;
 public class AgendaRequestDTO {
 
 	@ApiModelProperty(value="Nome")
+	@NotBlank(message="Nome")
+	@Length(min = 3, max = 50, message = "Nome")
 	private String nome;
 	
 	@ApiModelProperty(value="Telefone")
+	@NotBlank(message="Telefone")
+	@Pattern(regexp = "\\([\\d]{2}\\)[\\d]{5}[- .][\\d]{4}", message = "Telefone")
 	private String telefone;
 	
 	@ApiModelProperty(value="Endereço")
+	@NotNull(message="Endereco")
+	@Valid
 	private EnderecoRequestDTO enderecoDTO;
 
 	public Agenda converterParaEntidade() {

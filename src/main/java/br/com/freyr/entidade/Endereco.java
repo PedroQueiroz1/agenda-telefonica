@@ -4,35 +4,50 @@ import java.util.Objects;
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+
+import org.hibernate.validator.constraints.Length;
 
 @Embeddable
 public class Endereco {
 
-	@Column(name = "logradouro")
+	@Column(name = "logradouro", nullable = false, length = 80)
+	@Length(min=3, max = 80)
+	@NotBlank(message="Logradouro")
 	private String logradouro;
 	
-	@Column(name = "numero")
+	@Column(name = "numero", nullable = false)
+	@NotNull(message = "Número")
 	private Integer numero;
 	
-	@Column(name = "complemento")
+	@Column(name = "complemento", length = 15)
+	@Length(min=1, max = 15)
 	private String complemento;
 	
-	@Column(name = "bairro")
+	@Column(name = "bairro", nullable = false, length = 50)
+	@Length(min=3, max = 50)
+	@NotBlank(message="Bairro")
 	private String bairro;
 
-	@Column(name = "cep")
+	@Column(name = "cep", nullable = false)
+	@NotBlank(message="CEP")
+	@Pattern(regexp="[\\d]{5}-[\\d]{3}", message = "CEP")
 	private String cep;
 
-	@Column(name = "cidade")
+	@Column(name = "cidade", nullable = false, length = 50)
+	@Length(min=3, max = 50)
+	@NotBlank(message="Cidade")
 	private String cidade;
 	
-	@Column(name = "estado")
+	@Column(name = "estado", nullable = false, length = 50)
+	@Length(min=3, max = 50)
+	@NotBlank(message="Estado")
 	private String estado;
-
 	
 	
 	public Endereco() {
-		super();
 	}
 
 	public Endereco(String logradouro, Integer numero, String complemento, String bairro, String cep, String cidade,

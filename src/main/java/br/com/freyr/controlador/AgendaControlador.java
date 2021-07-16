@@ -47,7 +47,7 @@ public class AgendaControlador {
 	@Autowired
 	private AgendaServico agendaServico;
 	
-	@ApiOperation(value="Listar",nickname="listarTodasAgendas")
+	@ApiOperation(value="Listar pessoas",nickname="listarTodasAsPessoas")
 	@GetMapping
 	public List<AgendaResponseDTO> listarTodas(){
 		return agendaServico.listarTodos().stream()
@@ -55,8 +55,8 @@ public class AgendaControlador {
 				.collect(Collectors.toList());
 	}
 	
-	@ApiOperation(value="Listar por codigo", nickname="buscarAgendaPorCodigo")
-	@GetMapping("/listarPorCodigo/{codigo}")
+	@ApiOperation(value="Listar pessoas por codigo", nickname="buscarPessoaPorCodigo")
+	@GetMapping("/{codigo}")
 	public ResponseEntity<AgendaResponseDTO> listarPorCodigo(@PathVariable Long codigo){
 		Optional<Agenda> agenda =  agendaServico.buscarPorCodigo(codigo);		
 		return agenda.isPresent()?ResponseEntity
@@ -64,26 +64,26 @@ public class AgendaControlador {
 				:ResponseEntity.notFound().build();
 	}
 	
-	@ApiOperation(value="Salvar")
+	@ApiOperation(value="Salvar pessoa", nickname="salvarPessoa")
 	@PostMapping
-	public ResponseEntity<AgendaResponseDTO> salvar(@Valid @RequestBody AgendaRequestDTO agenda){
-		Agenda agendaSalva = agendaServico.salvar(agenda.converterParaEntidade());
+	public ResponseEntity<AgendaResponseDTO> salvar(@Valid @RequestBody AgendaRequestDTO agendaDTO){
+		Agenda agendaSalva = agendaServico.salvar(agendaDTO.converterParaEntidade());
 		return ResponseEntity.status(HttpStatus.CREATED)
 				.body(AgendaResponseDTO.converterParaAgendaDTO(agendaSalva));
 	}
 	
-	@ApiOperation(value="Atualizar")
-	@PutMapping("/atualizar/{codigo}")
-	public ResponseEntity<AgendaResponseDTO> atualizar(@Valid @PathVariable Long codigo,
+	@ApiOperation(value="Atualizar pessoa", nickname="atualizarPessoa")
+	@PutMapping("/{codigo}")
+	public ResponseEntity<AgendaResponseDTO> atualizar(@PathVariable Long codigo,
 			@Valid @RequestBody AgendaRequestDTO agenda){
 		var atualizarAgenda = agendaServico.atualizar(codigo, agenda.converterParaEntidade());
 		return ResponseEntity.ok(AgendaResponseDTO.converterParaAgendaDTO(atualizarAgenda));
 	}
 	
-	@ApiOperation(value="Deletar")
-	@ResponseStatus(code = HttpStatus.NO_CONTENT)
-	@DeleteMapping("/deletar/{codigo)")
-	public void deletar(@PathVariable Long codigo) {
+	@ApiOperation(value="Deletar pessoa", nickname="deletarPessoa")
+	@ResponseStatus(HttpStatus.NO_CONTENT)
+	@DeleteMapping("/deletar/{codigo}")
+	public void deletar(@PathVariable(value = "codigo") Long codigo) {
 		agendaServico.deletar(codigo);
 	}
 }

@@ -44,9 +44,9 @@ public class AgendaServico {
 	
 	private void verificarConteudoDuplicado(Agenda agenda) {
 		var pessoaNaAgenda = agendaRepositorio.findByNome(agenda.getNome());
-		if(pessoaNaAgenda!=null && pessoaNaAgenda.getId()!=agenda.getId()) {
-			throw new RegraAgendaException(String.format("A pessoa %s com código %s já está cadastrada",
-					agenda.getNome().toUpperCase(),agenda.getId()));
+		if(pessoaNaAgenda!=null && pessoaNaAgenda.getCodigo()!=agenda.getCodigo()) {
+			throw new RegraAgendaException(String.format("A pessoa %s já está cadastrada",
+					agenda.getNome().toUpperCase()));
 		}
 	}
 	

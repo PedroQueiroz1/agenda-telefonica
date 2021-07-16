@@ -19,6 +19,8 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 @ControllerAdvice
 public class AgendaTratamentoExcecao extends ResponseEntityExceptionHandler{
 	
+	private static final String PATTERN = "Pattern";
+	private static final String NOT_EMPTY = "NotEmpty";
 	private static final String LENGTH = "Length";
 	private static final String NOT_BLANK = "NotBlank";
 
@@ -58,12 +60,18 @@ public class AgendaTratamentoExcecao extends ResponseEntityExceptionHandler{
 
 	private String tratarMensagemDeErroParaUsuario(FieldError fieldError) {
 		if(fieldError.getCode().equals(NOT_BLANK)) {
-			return fieldError.getDefaultMessage().concat(" é obrigatório");
+			return fieldError.getDefaultMessage().concat(" é obrigatório!");
 		}
 		if(fieldError.getCode().equals(LENGTH)) {
 			return fieldError.getDefaultMessage().concat(
-					String.format(" é obrigatório ter entre %s e %s caracteres",
+					String.format(" é obrigatório ter entre %s e %s caracteres!",
 							fieldError.getArguments()[2],fieldError.getArguments()[1]));
+		}
+		if(fieldError.getCode().equals(NOT_EMPTY)) {
+			return fieldError.getDefaultMessage().concat(" é obrigatório!");
+		}
+		if(fieldError.getCode().equals(PATTERN)) {
+			return fieldError.getDefaultMessage().concat(" precisa ser válido!");
 		}
 		return fieldError.toString();
 	}
