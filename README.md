@@ -8,7 +8,7 @@ Para executar o projeto, será necessário instalar os seguintes programas:</br>
 <ul>
 <li>JDK 11: Necessário para executar o projeto Java</li></br>
 <li>Spring Tool Suíte 4: Para desenvolvimento do projeto</li></br>
-<li>*Pode ser que seja necessário configurar o docker-compose corretamente.</li></br>
+<li>*Pode ser que seja necessário ajustar as configurações do docker-compose.</li></br>
 </ul>
 </br>
 
