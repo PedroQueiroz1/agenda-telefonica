@@ -8,7 +8,7 @@ import io.swagger.annotations.ApiModelProperty;
 public class AgendaResponseDTO {
 
 	@ApiModelProperty(value="código")
-	private Long id;
+	private Long codigo;
 	
 	@ApiModelProperty(value="Nome")
 	private String nome;
@@ -21,8 +21,8 @@ public class AgendaResponseDTO {
 	public AgendaResponseDTO() {
 	}
 
-	public AgendaResponseDTO(Long id, String nome, String telefone, EnderecoResponseDTO enderecoDTO) {
-		this.id = id;
+	public AgendaResponseDTO(Long codigo, String nome, String telefone, EnderecoResponseDTO enderecoDTO) {
+		this.codigo = codigo;
 		this.nome = nome;
 		this.telefone = telefone;
 		this.enderecoDTO = enderecoDTO;
@@ -33,15 +33,15 @@ public class AgendaResponseDTO {
 				agenda.getEndereco().getNumero(),agenda.getEndereco().getComplemento(), 
 				agenda.getEndereco().getBairro(),agenda.getEndereco().getCep(),
 				agenda.getEndereco().getCidade(),agenda.getEndereco().getEstado());
-		return new AgendaResponseDTO(agenda.getId(),agenda.getNome(),agenda.getTelefone(),endeDTO);
+		return new AgendaResponseDTO(agenda.getCodigo(),agenda.getNome(),agenda.getTelefone(),endeDTO);
 	}
 
-	public Long getId() {
-		return id;
+	public Long getCodigo() {
+		return codigo;
 	}
 
-	public void setId(Long id) {
-		this.id = id;
+	public void setId(Long codigo) {
+		this.codigo = codigo;
 	}
 
 	public String getNome() {

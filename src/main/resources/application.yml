@@ -3,6 +3,7 @@ server:
 spring:
   application:
     name: agenda-telefonica
+####### CONFIGURATION MYSQL #######
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/agenda_servico?useTimezone=true&serverTimezone=UTC
@@ -15,6 +16,7 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+####### CONFIGURATION FLYWAY #######  
   flyway:
     url: jdbc:mysql://localhost:3306
     schemas: agenda_servico
@@ -22,6 +24,7 @@ spring:
     password: root
     baselineOnMigrate: true
     validateOnMigrate: false
+####### CONFIGURATION TRACING (JAEGER) #######
 opentracing:
   jaeger:
     service-name: agenda-telefonica
