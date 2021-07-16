@@ -16,8 +16,6 @@ Esse projeto faz uso das seguintes tecnologias:</br>
 </br>
 <ul>
   <li>SwaggerUi + Swagger2
-  <li>Grafana
-  <li>Prometheus
   <li>docker-compose
   <li>Jaeger
   <li>Actuator
