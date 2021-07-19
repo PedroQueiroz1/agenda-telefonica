@@ -24,7 +24,10 @@ Esse projeto faz uso das seguintes tecnologias:</br>
   <li>Flyway
 <ul>
 
-<h3>ATENÇÃO: Projeto ainda em construção!!!</h3>
+  <h3>ATENÇÃO: Projeto em pausa! 90% pronto</h3></br>
+ (já é possível de executar e ver o resultado com o Swagger)
+  </br>
+Atualmente estou estudando e realizando outros projetos... Pretendo futuramente completar esse projeto
 </br>
 </br>
 <b>Obs: Meu primeiro projeto simples sendo realizado fora dos cursos que estou realizando e que já realizei! </b>
