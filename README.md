@@ -24,10 +24,10 @@ Esse projeto faz uso das seguintes tecnologias:</br>
   <li>Flyway
 <ul>
 
-  <h3>ATENÇÃO: Projeto em pausa! 90% pronto</h3>
- (já é possível de executar e ver o resultado com o Swagger)
+  <h3>ATENÇÃO: Projeto finalizado!</h3>
+ (já é possível ver o resultado com o Swagger)
   </br></br>
-Atualmente estou estudando e realizando outros projetos... Pretendo futuramente completar esse projeto
+Atualmente estou estudando e realizando outros projetos... Futuramente pretendo adicionar o grafana e o prometheus ao projeto
 </br>
 </br>
 <b>Obs: Meu primeiro projeto simples sendo realizado fora dos cursos que estou realizando e que já realizei! </b>
