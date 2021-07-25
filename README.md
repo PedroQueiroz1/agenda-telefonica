@@ -27,7 +27,7 @@ Esse projeto faz uso das seguintes tecnologias:</br>
   <h3>ATENÇÃO: Projeto finalizado!</h3>
  (já é possível ver o resultado com o Swagger)
   </br></br>
-Atualmente estou estudando e realizando outros projetos... Futuramente pretendo adicionar o grafana e o prometheus ao projeto
+Atualmente estou estudando e realizando outros projetos... Futuramente pretendo adicionar o grafana e o prometheus ao projeto só e somente para praticar
 </br>
 </br>
 <b>Obs: Meu primeiro projeto simples sendo realizado fora dos cursos que estou realizando e que já realizei! </b>
