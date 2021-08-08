@@ -24,7 +24,4 @@ Esse projeto faz uso das seguintes tecnologias:</br>
   <li>Flyway
 <ul>
   </br></br>
-Atualmente estou estudando e realizando outros projetos... Futuramente pretendo adicionar o grafana e o prometheus ao projeto só e somente para praticar
-</br>
-</br>
 <b>Obs: Meu primeiro projeto simples sendo realizado fora dos cursos que estou realizando e que já realizei! </b>
