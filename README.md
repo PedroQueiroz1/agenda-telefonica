@@ -24,4 +24,4 @@ Esse projeto faz uso das seguintes tecnologias:</br>
   <li>Flyway
 <ul>
   </br></br>
-<b>Obs: Meu primeiro projeto simples sendo realizado fora dos cursos que estou realizando e que já realizei! </b>
+<b>Esse foi o primeiro projeto criado por mim, fora dos cursos que realizei!</b>
